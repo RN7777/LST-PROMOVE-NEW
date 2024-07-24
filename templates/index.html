@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>lst promove</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to lst promove</h1>
+        
+        {% for music in music_files %}
+        <div class="music-item">
+            <h2>{{ music }}</h2>
+            <audio controls>
+                <source src="/static/uploads/{{ music }}" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="/download/{{ music }}" class="download-btn">Download</a>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
